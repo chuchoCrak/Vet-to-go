@@ -1,0 +1,134 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e7ea6c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    border: 10px solid #ccc;
+    padding: 60px;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
+    width: 800px; /* Aumentamos el ancho para acomodar las dos columnas */
+    max-width: 100%;
+    height: auto; /* Aumentamos la altura para dar más espacio */
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.header-left {
+    text-align: left;
+}
+
+.header-left h1 {
+    font-size: 20px;
+    margin: -30px;
+}
+
+.centered {
+    text-align: justify;
+}
+
+.centered p {
+    margin: 10px;
+    font-size: 18px;
+}
+
+.main-content {
+    display: flex;
+}
+
+.left-column,
+.right-column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.left-column {
+    border-right: 1px solid #ccc; /* Añadimos una línea divisoria */
+}
+
+.left-column .pet-selection,
+.left-column .address-selection,
+.left-column .attention-time-selection,
+.left-column .date-selection {
+    margin-bottom: 20px; /* Añadimos una separación entre los campos */
+}
+
+.right-column {
+    padding-left: 20px;
+}
+
+.header-right label,
+.header-right select,
+.header-right input,
+.header-right ul {
+    display: block;
+    margin-top: 10px;
+}
+
+.date-selection {
+    display: none; /* Ocultar inicialmente */
+}
+
+.date-selection.active {
+    display: block; /* Mostrar cuando está activa */
+}
+
+.date-fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-fields input {
+    width: 30%;
+    margin-right: 5px;
+}
+
+.toggle-address {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
+#cost-breakdown {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.confirm-section {
+    text-align: right;
+    margin-top: 20px;
+}
+
+#confirm-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#confirm-button:hover {
+    background-color: #45a049;
+}

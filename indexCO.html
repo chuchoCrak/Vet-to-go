@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vet to Go</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>Vet to Go</h1>
+            </div>
+            <div class="centered">
+                <p>Solicitar consulta</p>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="left-column">
+                <div class="pet-selection">
+                    <label for="pet">Seleccione mascota:</label>
+                    <select id="pet">
+                        <option value="" selected disabled>Selecciona una mascota</option>
+                        <option value="Fido">Fido</option>
+                        <option value="Mittens">Mittens</option>
+                        <option value="Whiskers">Whiskers</option>
+                    </select>
+                </div>
+
+                <div class="address-selection">
+                    <label for="address">Dirección:</label>
+                    <select id="address">
+                        <option value="" selected disabled>Selecciona una dirección</option>
+                        <option value="Calle 123">Calle 123</option>
+                    </select>
+                    <p class="toggle-address" onclick="toggleAddressField()">¿Desea agregar otra dirección?</p>
+                    <input type="text" id="new-address" placeholder="Nueva dirección" style="display: none;" oninput="updateTotalCost()">
+                </div>
+
+                <div class="attention-time-selection">
+                    <label>Tiempo de atención:</label>
+                    <div class="radio-options">
+                        <label for="immediate"><input type="radio" id="immediate" name="attention-time" value="immediate" onclick="updateTotalCost()"> Inmediata (30m - 1hr)</label>
+                        <label for="schedule"><input type="radio" id="schedule" name="attention-time" value="schedule" onclick="toggleDateFields(true); updateTotalCost()"> Agendar cita</label>
+                    </div>
+                </div>
+                
+                <div class="date-selection" id="date-selection">
+                    <label for="appointment-date">Fecha de la cita:</label>
+                    <div class="date-fields">
+                        <input type="text" id="day" placeholder="Día" oninput="updateTotalCost()">
+                        <input type="text" id="month" placeholder="Mes">
+                        <input type="text" id="year" value="2025" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="header-right">
+                    <label for="appointment-time">Elegir la hora de la consulta:</label>
+                    <select id="appointment-time" onchange="updateTotalCost()">
+                        <option value="" selected disabled>Selecciona una hora</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="15:00">3:00 PM</option>
+                        <option value="16:00">4:00 PM</option>
+                        <option value="17:00">5:00 PM</option>
+                        <option value="18:00">6:00 PM</option>
+                    </select>
+
+                    <label for="total-cost">El costo total:</label>
+                    <input type="text" id="total-cost" readonly>
+                    <ul id="cost-breakdown"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="confirm-section">
+            <button id="confirm-button" onclick="confirmAppointment()">Confirmar consulta</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
